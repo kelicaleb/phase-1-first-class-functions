@@ -1,18 +1,9 @@
-const chai = "chai";
-const spies = "chai-spies";
-chai.spies();
-
-function receivesAFunction(callback){
-    function callback(){
-        const spy = chai.spy();
-        callback();
-    }
+function receivesAFunction(callback = () =>{}){
+    return callback()
 }
 function returnsANamedFunction(){
-    receivesAFunction();
+    return function Named(){}
 }
 function returnsAnAnonymousFunction(){
-    return function(){
-        
-    }
+    return () =>{}
 }
